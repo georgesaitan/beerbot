@@ -50,7 +50,7 @@ def w2b():
 try:
     while True:
         char = screen.getch()
-        if char == ord('x'):
+        if char == curses.KEY_CANCEL:
             break
         elif char == ord('q'):
             w1f()
