@@ -34,7 +34,7 @@ def w1b():
 
 
 def w2stop():
-    GPIO.output(in3, True)
+    GPIO.output(in3, False)
     GPIO.output(in4, False)
 
 def w2f():
@@ -50,7 +50,7 @@ def w2b():
 try:
     while True:
         char = screen.getch()
-        if char == curses.KEY_CANCEL:
+        if char == curses.KEY_BACKSPACE:
             break
         elif char == ord('q'):
             w1f()
