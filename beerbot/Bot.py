@@ -22,3 +22,27 @@ class BeerBot(object):
         self.weel21 = Weel(self.in5, self.in6)
         self.weel22 = Weel(self.in7, self.in8)
 
+    def forword(self):
+        self.weel11.forword()
+        self.weel12.forword()
+        self.weel21.forword()
+        self.weel22.forword()
+
+    def forword(self):
+        self.weel11.back()
+        self.weel12.back()
+        self.weel21.back()
+        self.weel22.back()
+
+    def right(self):
+        self.weel11.back()
+        self.weel12.back()
+        self.weel21.forword()
+        self.weel22.forword()
+
+    def left(self):
+        self.weel11.forword()
+        self.weel12.forword()
+        self.weel21.back()
+        self.weel22.back()
+
