@@ -1,4 +1,4 @@
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 
 
 class Pins(type):
@@ -11,10 +11,13 @@ class Pins(type):
         return cls._instances[cls]
 
     def initPin(self, pin):
-        GPIO.setup(pin, GPIO.OUT)
+        pass
+        # GPIO.setup(pin, GPIO.OUT)
 
     def setPin(self, pin, value):
-        GPIO.output(pin, value)
+        pass
+        # GPIO.output(pin, value)
 
     def initBoard(self):
-        GPIO.setMode(GPIO.BOARD)
+        pass
+        # GPIO.setMode(GPIO.BOARD)
