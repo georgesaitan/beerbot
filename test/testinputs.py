@@ -1,14 +1,16 @@
 #!/usr/bin/python
 
+from os import listdir
 from evdev import InputDevice
-from select import select
-gamepad = InputDevice('/dev/input/event0')
+PATH = '/dev/input/'
+
+for i in listdir(PATH):
+    try:
+        gamepad = InputDevice(PATH+i)
+        if "Logitech Gamepad F710" in gamepad.name:
+            print gamepad.name
+    finally:
+        pass
 
 
-for i in [1,16]:
-    print str(i)
-    gamepad = InputDevice('/dev/input/event'+str(i))
 
-
-    print gamepad
-    print "\n"

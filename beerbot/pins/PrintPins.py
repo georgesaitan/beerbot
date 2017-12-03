@@ -1,7 +1,7 @@
-# import RPi.GPIO as GPIO
+import Pins
 
 
-class Pins(type):
+class PrintPins(Pins):
 
     _instances = {}
 
@@ -11,13 +11,10 @@ class Pins(type):
         return cls._instances[cls]
 
     def initPin(self, pin):
-        pass
-        # GPIO.setup(pin, GPIO.OUT)
+        print pin
 
     def setPin(self, pin, value):
-        pass
-        # GPIO.output(pin, value)
+        print pin + ':' + value
 
     def initBoard(self):
-        pass
-        # GPIO.setMode(GPIO.BOARD)
+        print 'board'

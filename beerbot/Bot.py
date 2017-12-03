@@ -1,5 +1,5 @@
 from Weel import Weel
-from beerbot.Pins import Pins
+from pins.Pins import Pins
 
 
 class BeerBot(object):

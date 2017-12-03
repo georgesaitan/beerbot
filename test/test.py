@@ -1,4 +1,4 @@
-from beerbot.Pins import Pins
+from pins.Pins import Pins
 
 p1 = Pins
 p2 = Pins
