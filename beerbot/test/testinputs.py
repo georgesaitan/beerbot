@@ -2,6 +2,9 @@
 
 from os import listdir
 from evdev import InputDevice
+
+# from Controller import Button
+
 PATH = '/dev/input/'
 
 for i in listdir(PATH):
@@ -9,8 +12,13 @@ for i in listdir(PATH):
         gamepad = InputDevice(PATH+i)
         if "Logitech Gamepad F710" in gamepad.name:
             print gamepad.name
-    finally:
+    except Exception as e:
         pass
+
+
+
+
+
 
 
 

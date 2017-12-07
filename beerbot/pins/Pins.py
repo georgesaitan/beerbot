@@ -1,6 +1,6 @@
 
 
-class Pins(object):
+class Pins:
 
     def initPin(self, pin):
         raise Exception('no pin')

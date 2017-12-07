@@ -1,35 +1,50 @@
 class GamePad(object):
+    PATH = '/dev/input/'
+
 
     def find(self):
         from os import listdir
         from evdev import InputDevice
-        # gamepad = InputDevice('/dev/input/event0')
-        PATH = '/dev/input/'
 
-        for i in listdir(PATH):
+        for i in listdir(GamePad.PATH):
             try:
-                gamepad = InputDevice(PATH + i)
+                gamepad = InputDevice(GamePad.PATH + i)
                 if "Logitech Gamepad F710" in gamepad.name:
+                    print GamePad.PATH + i
                     self.controller = gamepad
             except Exception:
                 pass
 
-        # if event.type == 3 and event.code == 16 and event.value == -1:
-        #     print "left"
-        # elif event.type == 3 and event.code == 16 and event.value == 1:
-        #     print "right"
-        # elif event.type == 3 and event.code == 17 and event.value == -1:
-        #     print "fwd"
-        # elif event.type == 3 and event.code == 17 and event.value == 1:
-        #     print "back"
-        # elif event.type == 3 and event.value == 0:
-        #     print "stop"
+    def getButton(self,event):
+        button = Button(event.type, event.code, event.value)
+        if button == Button.LEFT:
+            print "left"
+        elif button == Button.RIGHT:
+            print "right"
+        elif button == Button.FWD:
+            print "fwd"
+        elif button == Button.BACK:
+            print "back"
+        elif button == Button.STOP:
+            print "stop"
 
-class Buttons(object):
+class Button(object):
+
     def __init__(self, type, code, value):
         self.type = type
         self.code = code
         self.value = value
 
     def __eq__(self, o):
+
         return self.type == o.type and self.code == o.code and self.value == o.value
+    
+class Buttons(object):
+    LEFT = Button(3, 16, -1)
+    RIGHT = Button(3, 16, 1)
+    FWD = Button(3, 17, -1)
+    BACK = Button(3, 17, 1)
+    STOP = Button(3, None, 0)
+
+
+

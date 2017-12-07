@@ -1,22 +1,21 @@
-from pins.Pins import Pins
 
 
 class Weel(object):
-    def __init__(self, pin1, pin2):
-        pins = Pins()
-        self.pin1 = pin1
-        self.pin2 = pin2
-        pins.initPin(pin1)
-        pins.initPin(pin2)
+    def __init__(self, pinSet, pinNo1, pinNo2):
+        self.pinSet = pinSet
+        self.pinNo1 = pinNo1
+        self.pinNo2 = pinNo2
+        pinSet.initPin(pinNo1)
+        pinSet.initPin(pinNo2)
 
     def forword(self):
-        self.pins.setPin(self.pin1,True)
-        self.pins.setPin(self.pin2, False)
+        self.pinSet.setPin(self.pinNo1,True)
+        self.pinSet.setPin(self.pinNo2, False)
 
     def back(self):
-        self.pins.setPin(self.pin1, False)
-        self.pins.setPin(self.pin2, True)
+        self.pinSet.setPin(self.pinNo1, False)
+        self.pinSet.setPin(self.pinNo2, True)
 
     def stop(self):
-        self.pins.setPin(self.pin1, False)
-        self.pins.setPin(self.pin2, False)
+        self.pinSet.setPin(self.pinNo1, False)
+        self.pinSet.setPin(self.pinNo2, False)

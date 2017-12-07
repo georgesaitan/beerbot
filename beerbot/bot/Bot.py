@@ -1,5 +1,5 @@
 from Weel import Weel
-from pins.Pins import Pins
+from pins.PrintPins import PrintPins
 
 
 class BeerBot(object):
@@ -15,12 +15,12 @@ class BeerBot(object):
     in8 = 35
 
     def __init__(self):
-        pins = Pins()
-        pins.initBoard()
-        self.weel11 = Weel(self.in1, self.in2)
-        self.weel12 = Weel(self.in3, self.in4)
-        self.weel21 = Weel(self.in5, self.in6)
-        self.weel22 = Weel(self.in7, self.in8)
+        self.pins = PrintPins()
+        self.pins.initBoard()
+        self.weel11 = Weel(self.pins, self.in1, self.in2)
+        self.weel12 = Weel(self.pins, self.in3, self.in4)
+        self.weel21 = Weel(self.pins, self.in5, self.in6)
+        self.weel22 = Weel(self.pins, self.in7, self.in8)
 
     def forword(self):
         self.weel11.forword()
@@ -28,7 +28,7 @@ class BeerBot(object):
         self.weel21.forword()
         self.weel22.forword()
 
-    def forword(self):
+    def back(self):
         self.weel11.back()
         self.weel12.back()
         self.weel21.back()
