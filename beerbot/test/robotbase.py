@@ -1,5 +1,5 @@
-from Controller import GamePad
 from bot.Bot import BeerBot
+from bot.Controller import GamePad
 
 #get controller
 

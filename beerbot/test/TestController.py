@@ -1,4 +1,4 @@
-from Controller import GamePad
+from bot.Controller import GamePad
 
 #get controller
 

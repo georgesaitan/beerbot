@@ -1,6 +1,7 @@
-from Weel import Weel
 # from pins.PrintPins import PrintPins
 from pins.GPIOPins import GPIOPins
+
+from bot.Weel import Weel
 
 
 class BeerBot(object):

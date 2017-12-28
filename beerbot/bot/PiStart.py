@@ -1,5 +1,6 @@
-from Controller import GamePad, Button
-from bot.Bot import BeerBot
+#!/usr/bin/python
+from Controller import GamePad
+from Bot import BeerBot
 
 from select import select
 
