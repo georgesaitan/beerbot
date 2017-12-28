@@ -15,18 +15,24 @@ class GamePad(object):
             except Exception:
                 pass
 
-    def getButton(self,event):
+    @staticmethod
+    def getButton(event, bot):
         button = Button(event.type, event.code, event.value)
-        if button == Button.LEFT:
+        if button == Buttons.LEFT:
             print "left"
-        elif button == Button.RIGHT:
+            bot.left()
+        elif button == Buttons.RIGHT:
             print "right"
-        elif button == Button.FWD:
+            bot.right()
+        elif button == Buttons.FWD:
             print "fwd"
-        elif button == Button.BACK:
+            bot.forward()
+        elif button == Buttons.BACK:
             print "back"
-        elif button == Button.STOP:
+            bot.back()
+        elif button in Buttons.STOP:
             print "stop"
+            bot.stop()
 
 class Button(object):
 
@@ -38,13 +44,17 @@ class Button(object):
     def __eq__(self, o):
 
         return self.type == o.type and self.code == o.code and self.value == o.value
-    
+
+    def __hash__(self):
+        return self.type*100 + self.code*10 + self.code
+
+
 class Buttons(object):
     LEFT = Button(3, 16, -1)
     RIGHT = Button(3, 16, 1)
     FWD = Button(3, 17, -1)
     BACK = Button(3, 17, 1)
-    STOP = Button(3, None, 0)
+    STOP = {Button(3, 16, 0), Button(3, 17, 0)}
 
 
 

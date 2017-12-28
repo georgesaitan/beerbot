@@ -1,5 +1,7 @@
-from Controller import GamePad
+from Controller import GamePad, Button
 from bot.Bot import BeerBot
+
+from select import select
 
 #get controller
 
@@ -10,9 +12,9 @@ controller.find()
 
 #get bot
 bot = BeerBot()
-bot.forword()
-bot.left()
-# bot.right()
-# bot.back()
 
 #wait for input
+while True:
+    r,w,x = select([controller.controller], [], [])
+    for event in controller.controller.read():
+        GamePad.getButton(event, bot)
