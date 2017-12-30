@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import Pins
+from Pins import Pins
 
 
 class GPIOPins(Pins):
