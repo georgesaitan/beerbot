@@ -1,5 +1,5 @@
-from PrintPins import PrintPins
-# from pins.GPIOPins import GPIOPins
+# from PrintPins import PrintPins
+from GPIOPins import GPIOPins
 
 from Weel import Weel
 
@@ -17,8 +17,8 @@ class BeerBot(object):
     in8 = 35
 
     def __init__(self):
-        self.pins = PrintPins()
-        # self.pins = GPIOPins()
+        # self.pins = PrintPins()
+        self.pins = GPIOPins()
         self.pins.initBoard()
         self.weel11 = Weel(self.pins, self.in1, self.in2)
         self.weel12 = Weel(self.pins, self.in3, self.in4)
