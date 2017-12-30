@@ -1,7 +1,7 @@
-from pins.PrintPins import PrintPins
+from PrintPins import PrintPins
 # from pins.GPIOPins import GPIOPins
 
-from bot.Weel import Weel
+from Weel import Weel
 
 
 class BeerBot(object):
