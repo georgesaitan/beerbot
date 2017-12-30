@@ -1,5 +1,5 @@
 # from PrintPins import PrintPins
-from GPIOPins import GPIOPins
+from GpioPins import GPIOPins
 
 from Weel import Weel
 
