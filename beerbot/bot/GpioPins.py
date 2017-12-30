@@ -18,4 +18,4 @@ class GPIOPins(Pins):
         GPIO.output(pin, value)
 
     def initBoard(self):
-        GPIO.setMode(GPIO.BOARD)
+        GPIO.setmode(GPIO.BOARD)
