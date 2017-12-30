@@ -6,8 +6,8 @@ from select import select
 
 #get controller
 
-controller = GamePad()
-controller.find()
+gamepad = GamePad()
+gamepad.find()
 
 
 
@@ -15,7 +15,10 @@ controller.find()
 bot = BeerBot()
 
 #wait for input
-while True:
-    r,w,x = select([controller.controller], [], [])
-    for event in controller.controller.read():
-        GamePad.getButton(event, bot)
+if gamepad.controller is not None:
+    while True:
+        r,w,x = select([gamepad.controller], [], [])
+        for event in gamepad.controller.read():
+            GamePad.getButton(event, bot)
+else:
+    print "no controller"

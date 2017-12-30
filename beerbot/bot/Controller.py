@@ -3,6 +3,8 @@ class GamePad(object):
 
 
     def find(self):
+        self.controller = None
+
         from os import listdir
         from evdev import InputDevice
 

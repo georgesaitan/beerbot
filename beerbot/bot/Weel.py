@@ -1,5 +1,3 @@
-
-
 class Weel(object):
     def __init__(self, pinSet, pinNo1, pinNo2):
         self.pinSet = pinSet
