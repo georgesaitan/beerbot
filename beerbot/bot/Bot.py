@@ -39,14 +39,14 @@ class BeerBot(object):
 
     def right(self):
         self.weel11.back()
-        self.weel12.back()
-        self.weel21.forword()
+        self.weel12.forword()
+        self.weel21.back()
         self.weel22.forword()
 
     def left(self):
         self.weel11.forword()
-        self.weel12.forword()
-        self.weel21.back()
+        self.weel12.back()
+        self.weel21.forword()
         self.weel22.back()
 
     def stop(self):
